@@ -1,6 +1,7 @@
-FROM debian::buster
+FROM debian:buster
 
-RUN sudo apt install update && sudo apt install upgrade -y
+RUN apt update && apt upgrade -y
 
-RUN sudo apt install mariadb-server -y
+RUN apt install mariadb-server -y
 
+RUN mariadb-install-db --user=mysql -y
