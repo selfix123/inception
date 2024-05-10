@@ -12,7 +12,7 @@ services:
       - wordpress
     networks:
       - inception
-    restart: unless-stopped
+    restart: always
 
   mariadb:
     build:
@@ -26,7 +26,7 @@ services:
       - mariadb:/var/lib/mysql
     networks:
       - inception
-    restart: unless-stopped
+    restart: always
 
   wordpress:
     build:
@@ -42,7 +42,7 @@ services:
       - wordpress:/var/www/html
     networks:
       - inception
-    restart: unless-stopped
+    restart: always
 
 volumes:
   wordpress:
